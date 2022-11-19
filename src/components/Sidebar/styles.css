@@ -1,0 +1,35 @@
+.categories {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.categories-item-btn {
+
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: left;
+    cursor: pointer;
+
+
+}
+
+.categories-item-btn:focus {
+    text-decoration: underline;
+}
+
+.categories-item-btn:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .categories {
+        align-items: center;
+        padding: 20px;
+
+    }
+}
