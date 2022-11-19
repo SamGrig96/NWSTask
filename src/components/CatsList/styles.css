@@ -6,14 +6,23 @@
     place-items: center;
     margin-bottom: 50px;
 }
+
 .cats-item {
-        width: 100%;
-        aspect-ratio: 1 / 1;
+    width: 100%;
+    aspect-ratio: 1 / 1;
 }
+
 .cats-item-img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-    
+
+@media only screen and (max-width: 600px) {
+    .cats {
+
+        grid-template-columns: none;
+
+    }
+}

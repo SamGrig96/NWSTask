@@ -17,31 +17,18 @@ export const getCats = createAsyncThunk(
     },
 );
 
-const isError = (action) => {
-    return action.type.endsWith('rejected');
-};
-
 const catsSlice = createSlice({
     name: 'cats',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(getCats.pending, (state) => {
-                state.isLoading = true;
-                state.error = null;
-                state.cats = [];
-            })
             .addCase(getCats.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
                 state.cats = action.payload.data;
             })
-            .addMatcher(isError, (state) => {
-                state.error = "Couldn't get cats";
-                state.isLoading = false;
-                state.cats = [];
-            });
+
     },
 });
 
