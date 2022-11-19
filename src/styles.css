@@ -27,7 +27,7 @@
 }
 
 .load-btn:hover :focus {
-    /* color: #fff; */
+    color: #fff;
     background-color: #db72db;
 }
 
