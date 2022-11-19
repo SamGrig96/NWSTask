@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { BASE_URL } from '../../config';
 
-
 const initialState = {
     error: null,
     isLoading: false,
@@ -17,6 +16,10 @@ export const getCats = createAsyncThunk(
     },
 );
 
+const isError = (action) => {
+    return action.type.endsWith('rejected');
+};
+
 const catsSlice = createSlice({
     name: 'cats',
     initialState,
@@ -28,7 +31,6 @@ const catsSlice = createSlice({
                 state.error = null;
                 state.cats = action.payload.data;
             })
-
     },
 });
 
